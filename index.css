@@ -25,6 +25,10 @@ body {
   overflow-x: hidden;
   scroll-behavior: auto;
 }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 #loading {
   width: 100vw;
   height: 100vh;
