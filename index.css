@@ -11,6 +11,12 @@
   font-style: normal;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   padding: 0px;
@@ -48,9 +54,12 @@ body {
   }
 }
 header {
-  width: 92vw;
+  width: 100%;
   padding: 6vh 4vw;
   position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0;
   font-weight: bold;
   background: transparent;
   color: #fff;
@@ -494,8 +503,9 @@ header.scrolled #navigation a:hover {
   animation: heroImageIn 0.95s ease-out forwards;
 }
 #work {
-  width: 92vw;
+  width: 100%;
   padding: 6vh 4vw;
+  box-sizing: border-box;
   font-weight: bold;
 }
 #work h1 {
@@ -620,8 +630,9 @@ header.scrolled #navigation a:hover {
   transform: rotate(6deg) translateY(14px);
 }
 #bio {
-  width: 92vw;
+  width: 100%;
   padding: 6vh 4vw;
+  box-sizing: border-box;
   font-weight: bold;
 }
 #bio h1 {
@@ -640,8 +651,9 @@ header.scrolled #navigation a:hover {
   min-width: 180px;
 }
 .content_section {
-  width: 92vw;
+  width: 100%;
   padding: 6vh 4vw;
+  box-sizing: border-box;
 }
 .content_section h1 {
   padding: 5px 0px;
@@ -759,8 +771,9 @@ header.scrolled #navigation a:hover {
   color: rgb(255, 44, 90);
 }
 #contact {
-  width: 92vw;
+  width: 100%;
   padding: 6vh 4vw;
+  box-sizing: border-box;
 }
 #contact h1 {
   padding: 5px 0px;
@@ -899,23 +912,26 @@ button:focus {
   }
   .phone_stack {
     height: 310px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .project_card_stack {
     margin-top: 18px;
   }
   .phone_screen {
-    width: 140px;
-    height: 295px;
+    width: clamp(112px, 36vw, 140px);
+    height: clamp(236px, 75vw, 295px);
     border-radius: 22px;
   }
   .layer_1 {
-    left: 5%;
+    left: 2%;
   }
   .layer_2 {
-    left: 33%;
+    left: 30%;
   }
   .layer_3 {
-    left: 61%;
+    left: 58%;
   }
   #rightImage {
     display: none;
@@ -927,7 +943,7 @@ button:focus {
     margin-top: 0;
     height: auto;
     min-height: 100vh;
-    padding: 10px 4%;
+    padding: 10px 0px 30px 0px;
   }
   #top_part.hero_lena::before,
   #top_part.hero_lena::after {
@@ -939,11 +955,11 @@ button:focus {
     margin-top: 0;
   }
   #about {
-    width: 92% !important;
+    width: 100% !important;
     height: auto;
     padding-top: 20vh !important;
     text-align: center;
-    padding: 20vh 4% 6vh 4%;
+    padding: 20vh 6vw 6vh 6vw;
   }
   .hero_subtitle {
     width: 100%;
@@ -954,7 +970,7 @@ button:focus {
     white-space: normal;
   }
   .hero_title {
-    font-size: 74px;
+    font-size: 64px;
   }
   .hero_kicker {
     font-size: 34px;
@@ -973,6 +989,15 @@ button:focus {
     justify-content: center;
     margin-top: 24px;
     width: 100%;
+    gap: 14px;
+  }
+  .hero_socials .social {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 1;
   }
   .hero_scratch,
   #rightImage {
@@ -1032,10 +1057,13 @@ button:focus {
     width: 33%;
   }
   header {
-    width: 96vw;
+    width: 100%;
     background: #fff;
-    padding: 4vh 2vw;
+    padding: 4vh 4vw;
     position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0;
   }
   #header table tr td {
     width: 100%;
