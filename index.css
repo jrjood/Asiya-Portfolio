@@ -300,6 +300,7 @@ header.scrolled #navigation a:hover {
   color: #fff;
   border-color: rgb(255, 44, 90);
   color: #fff;
+  white-space: nowrap;
 }
 .btn_one.download_cta i {
   color: #fff;
@@ -323,18 +324,19 @@ header.scrolled #navigation a:hover {
   z-index: 3;
 }
 .hero_socials .social {
-  font-size: 19px;
+  font-size: 18px;
   color: rgba(43, 58, 85, 0.95);
   text-decoration: none;
   border: 2px solid rgba(43, 58, 85, 0.95);
-  width: 20px;
-  height: 20px;
-  padding: 7px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
   margin: 0;
-  border-radius: 20px;
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
   box-shadow: none;
 }
 .hero_socials .social:hover {
@@ -909,6 +911,54 @@ button:focus {
   background: rgba(0, 0, 0, 0.8);
 }
 
+@media (max-width: 1400px) {
+  #rightImage {
+    display: none;
+  }
+  #top_part.hero_lena {
+    height: auto;
+    min-height: 100vh;
+    padding: 72px 4vw 40px 4vw;
+  }
+  #top_part.hero_lena::before,
+  #top_part.hero_lena::after {
+    display: none;
+  }
+  .hero-content {
+    grid-template-columns: 1fr;
+    height: auto;
+    margin-top: 0;
+  }
+  #about {
+    width: 100% !important;
+    padding: 18vh 6vw 6vh 6vw;
+    text-align: center;
+  }
+  .hero_content_wrap {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .hero_subtitle {
+    width: 100%;
+  }
+  .hero_title {
+    white-space: normal;
+  }
+  .hero_cta {
+    justify-content: center;
+  }
+  .hero_socials {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin-top: 24px;
+    width: 100%;
+  }
+  .hero_scratch {
+    display: none;
+  }
+}
+
 @media (max-width: 1000px) {
   .project_gallery_grid {
     grid-template-columns: 1fr;
@@ -947,7 +997,7 @@ button:focus {
     margin-top: 0;
     height: auto;
     min-height: 100vh;
-    padding: 10px 0px 30px 0px;
+    padding: 44px 0px 30px 0px;
   }
   #top_part.hero_lena::before,
   #top_part.hero_lena::after {
@@ -1006,26 +1056,6 @@ button:focus {
   .hero_scratch,
   #rightImage {
     display: none;
-  }
-  .btn_one {
-    padding: 6px 30px;
-    width: 60%;
-    margin: 4vh auto;
-    box-shadow: 0px 10px 20px rgba(255, 44, 90, 0.8);
-    background: rgb(255, 44, 90);
-    color: #fff;
-  }
-  .btn_one.download_cta {
-    background: rgba(43, 58, 85, 0.95);
-    border-color: rgba(43, 58, 85, 0.95);
-    color: #fff;
-  }
-  .btn_one.download_cta i {
-    color: #fff;
-  }
-  .btn_one:hover {
-    box-shadow: 0px 10px 40px rgba(255, 44, 90, 0.8);
-    cursor: pointer;
   }
   #contact table tr td {
     width: 100%;

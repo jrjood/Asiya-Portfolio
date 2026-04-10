@@ -9,9 +9,6 @@ function HeroSection({ profile, socialLinks, revealReady }) {
       <div className='hero-content'>
         <div id='about' className='left-content'>
           <div className='hero_content_wrap left-content-wrap'>
-            <h3 className='hero_kicker hero_reveal_1'>
-              The Heart of Creativity
-            </h3>
             <h1 className='hero_title hero_reveal_2'>
               Hi, I&apos;m <span className='hero_name'>{firstName}</span>
             </h1>
