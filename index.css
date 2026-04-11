@@ -82,7 +82,7 @@ header {
   background: transparent;
   color: #fff;
   transition: 0.4s ease-in-out;
-  z-index: 2;
+  z-index: 20;
 }
 header.scrolled {
   background: #fff;
@@ -104,7 +104,7 @@ header table {
   height: 100vh;
   background: rgba(0, 0, 0, 0.92);
   position: fixed;
-  z-index: 4;
+  z-index: 30;
   display: none;
   flex-direction: column;
   justify-content: center;
