@@ -80,7 +80,7 @@ function App() {
       }
 
       event.preventDefault();
-      lenis.scrollTo(section, { duration: 1.8 });
+      lenis.scrollTo(section, { duration: 2.8 });
       window.history.replaceState(null, '', hash);
     };
 

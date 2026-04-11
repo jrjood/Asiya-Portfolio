@@ -17,6 +17,20 @@
   box-sizing: border-box;
 }
 
+a,
+button,
+input,
+textarea,
+select,
+[role='button'] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   padding: 0px;
@@ -148,6 +162,10 @@ header table {
 #logo {
   font-size: 24px;
   color: rgb(255, 44, 90);
+}
+#logo a {
+  color: inherit;
+  text-decoration: none;
 }
 #navigation {
   text-align: right;
@@ -912,13 +930,10 @@ button:focus {
 }
 
 @media (max-width: 1400px) {
-  #rightImage {
-    display: none;
-  }
   #top_part.hero_lena {
     height: auto;
-    min-height: 100vh;
-    padding: 72px 4vw 40px 4vw;
+    min-height: 0;
+    padding: 72px 4vw 0px 4vw;
   }
   #top_part.hero_lena::before,
   #top_part.hero_lena::after {
@@ -927,6 +942,8 @@ button:focus {
   .hero-content {
     grid-template-columns: 1fr;
     height: auto;
+    min-height: 0;
+    align-content: end;
     margin-top: 0;
   }
   #about {
@@ -947,15 +964,53 @@ button:focus {
   .hero_cta {
     justify-content: center;
   }
-  .hero_socials {
-    position: static;
-    transform: none;
+  #rightImage {
+    display: flex;
     justify-content: center;
-    margin-top: 24px;
     width: 100%;
+    margin-top: 0;
+    align-self: auto;
+  }
+  .hero_visual_layer {
+    width: min(680px, 96vw);
+    height: auto;
+    min-height: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .hero_person {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(580px, 88vw);
+    max-width: 100%;
+    align-self: flex-end;
+    display: block;
   }
   .hero_scratch {
-    display: none;
+    display: block;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    width: min(690px, 106vw);
+    transform: translate(-50%, -50%);
+    animation: none;
+  }
+  .hero_socials {
+    position: absolute;
+    left: auto;
+    right: 12px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    width: fit-content;
+    margin-top: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    z-index: 4;
   }
 }
 
@@ -987,17 +1042,14 @@ button:focus {
   .layer_3 {
     left: 58%;
   }
-  #rightImage {
-    display: none;
-  }
   #top_part {
     border: 0px;
   }
   #top_part.hero_lena {
     margin-top: 0;
     height: auto;
-    min-height: 100vh;
-    padding: 44px 0px 30px 0px;
+    min-height: 0;
+    padding: 44px 0px 0px 0px;
   }
   #top_part.hero_lena::before,
   #top_part.hero_lena::after {
@@ -1006,6 +1058,8 @@ button:focus {
   .hero-content {
     grid-template-columns: 1fr;
     height: auto;
+    min-height: 0;
+    align-content: end;
     margin-top: 0;
   }
   #about {
@@ -1033,17 +1087,59 @@ button:focus {
     justify-content: center;
     gap: 16px;
   }
+  #rightImage {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0;
+    align-self: auto;
+  }
+  .hero_visual_layer {
+    width: min(500px, 98vw);
+    height: auto;
+    min-height: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .hero_person {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(430px, 90vw);
+    max-width: 100%;
+    display: block;
+  }
+  .hero_scratch {
+    display: block;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    width: min(520px, 112vw);
+    transform: translate(-50%, -50%);
+    animation: none;
+  }
   .cta_button {
     min-width: 220px;
     margin: 0;
   }
   .hero_socials {
-    position: static;
-    transform: none;
-    justify-content: center;
-    margin-top: 24px;
-    width: 100%;
-    gap: 14px;
+    position: absolute;
+    left: auto;
+    right: 8px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    width: fit-content;
+    margin-top: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    z-index: 4;
+  }
+  .hero_socials {
+    display: none;
   }
   .hero_socials .social {
     width: 42px;
@@ -1052,10 +1148,6 @@ button:focus {
     border-radius: 50%;
     font-size: 18px;
     line-height: 1;
-  }
-  .hero_scratch,
-  #rightImage {
-    display: none;
   }
   #contact table tr td {
     width: 100%;
@@ -1093,7 +1185,7 @@ button:focus {
   header {
     width: 100%;
     background: #fff;
-    padding: 4vh 4vw;
+    padding: 1vh 4vw;
     position: absolute;
     left: 0;
     right: 0;
