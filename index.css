@@ -725,6 +725,22 @@ header.scrolled #navigation a:hover {
   margin: 0px;
   font-size: 20px;
 }
+.timeline_heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.timeline_logo {
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 0;
+  filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.08));
+}
 .timeline_meta {
   margin: 8px 0px 12px 0px;
   color: rgb(255, 44, 90);

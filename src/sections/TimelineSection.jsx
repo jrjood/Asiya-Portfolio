@@ -8,7 +8,17 @@ function TimelineSection({ id, title, items, type }) {
             key={`${item.period || item.year}-${item.company || item.institution}`}
             className='timeline_item'
           >
-            <h3>{type === 'work' ? item.position : item.credential}</h3>
+            <div className='timeline_heading'>
+              {item.logo ? (
+                <img
+                  className='timeline_logo'
+                  src={item.logo}
+                  alt={`${item.institution} logo`}
+                  loading='lazy'
+                />
+              ) : null}
+              <h3>{type === 'work' ? item.position : item.credential}</h3>
+            </div>
             <p className='timeline_meta'>
               {type === 'work' ? item.period : item.year} |{' '}
               {type === 'work' ? item.company : item.institution}
