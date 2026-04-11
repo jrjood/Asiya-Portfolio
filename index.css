@@ -132,13 +132,13 @@ header table {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 44, 90, 0.8);
-  background: rgba(0, 0, 0, 0.45);
+  width: auto;
+  height: auto;
+  padding: 8px;
+  border: 0;
+  background: transparent;
   color: #fff;
-  font-size: 20px;
+  font-size: 28px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -146,7 +146,7 @@ header table {
   transition: 0.3s ease;
 }
 .magnify_nav:hover:not(:disabled) {
-  background: rgb(255, 44, 90);
+  color: rgb(255, 44, 90);
   transform: translateY(-50%) scale(1.06);
 }
 .magnify_nav:disabled {
