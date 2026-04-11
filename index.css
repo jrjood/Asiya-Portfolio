@@ -1201,19 +1201,37 @@ button:focus {
   header {
     width: 100%;
     background: #fff;
-    padding: 1vh 4vw;
+    padding: 10px 4vw;
     position: absolute;
     left: 0;
     right: 0;
     margin: 0;
   }
+  #header table {
+    table-layout: fixed;
+  }
   #header table tr td {
     width: 100%;
     display: block;
     text-align: center;
-    padding: 15px 0px;
+    padding: 6px 0px;
+  }
+  #logo {
+    width: 100%;
+    font-size: 22px;
+  }
+  #navigation {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+    text-align: center;
   }
   #navigation a {
     color: #000;
+    margin-left: 0;
+    padding: 4px 6px;
+    font-size: 13px;
   }
 }
