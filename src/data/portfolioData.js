@@ -40,9 +40,9 @@ export const galleryProjects = [
     title: 'Murano Stone',
     period: '2020 - Present',
     images: [
-      '/images/murano%20stone/Picture2.png',
-      '/images/murano%20stone/Picture3.png',
-      '/images/murano%20stone/Picture4.png',
+      '/images/murano%20stone/Picture2.webp',
+      '/images/murano%20stone/Picture3.webp',
+      '/images/murano%20stone/Picture4.webp',
     ],
   },
   {
@@ -50,9 +50,9 @@ export const galleryProjects = [
     title: 'Murano Home',
     period: '2023 - 2024',
     images: [
-      '/images/murano%20home/Picture5.png',
-      '/images/murano%20home/Picture6.png',
-      '/images/murano%20home/Picture7.png',
+      '/images/murano%20home/Picture5.webp',
+      '/images/murano%20home/Picture6.webp',
+      '/images/murano%20home/Picture7.webp',
     ],
   },
   {
@@ -60,9 +60,9 @@ export const galleryProjects = [
     title: "Cherry's Gallery",
     period: '2025 - Present',
     images: [
-      '/images/cherry%27s%20gallery/Picture8.png',
-      '/images/cherry%27s%20gallery/Picture9.png',
-      '/images/cherry%27s%20gallery/Picture10.png',
+      '/images/cherry%27s%20gallery/Picture8.webp',
+      '/images/cherry%27s%20gallery/Picture9.webp',
+      '/images/cherry%27s%20gallery/Picture10.webp',
     ],
   },
   {
@@ -70,9 +70,9 @@ export const galleryProjects = [
     title: 'Urban Development Fund',
     period: '2025 - Present',
     images: [
-      '/images/urban%20dev/Picture11.png',
-      '/images/urban%20dev/Picture12.png',
-      '/images/urban%20dev/Picture13.png',
+      '/images/urban%20dev/Picture11.webp',
+      '/images/urban%20dev/Picture12.webp',
+      '/images/urban%20dev/Picture13.webp',
     ],
   },
   {
@@ -80,9 +80,9 @@ export const galleryProjects = [
     title: 'Wealth Holding',
     period: '2025 - Present',
     images: [
-      '/images/Wealth%20holding/Picture2.png',
-      '/images/Wealth%20holding/Picture3.png',
-      '/images/Wealth%20holding/Picture4.png',
+      '/images/Wealth%20holding/Picture2.webp',
+      '/images/Wealth%20holding/Picture3.webp',
+      '/images/Wealth%20holding/Picture4.webp',
     ],
   },
 ];
@@ -101,19 +101,19 @@ export const education = [
     year: '2015-2019',
     credential: 'Bachelor of Laws (LLB)',
     institution: 'Ain Shams University',
-    logo: '/images/education/ain-shams.png',
+    logo: '/images/education/ain-shams.webp',
   },
   {
     year: '2023',
     credential: 'Certified Digital Marketing Diploma',
     institution: 'Canadian Chamber of Commerce (CanCham)',
-    logo: '/images/education/cancham.png',
+    logo: '/images/education/cancham.webp',
   },
   {
     year: '2024',
     credential: 'Advanced E-commerce Training Workshop',
     institution: 'USAID (4-day intensive) & Online Marketing Course by USAID',
-    logo: '/images/education/usaid-logo.png',
+    logo: '/images/education/usaid-logo.webp',
   },
 ];
 
