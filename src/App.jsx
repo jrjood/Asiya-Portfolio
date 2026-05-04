@@ -23,8 +23,8 @@ import {
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isLoading] = useState(false);
-  const [isLoadingClosing] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isLoadingClosing, setIsLoadingClosing] = useState(false);
   const [isMagnifyVisible, setIsMagnifyVisible] = useState(false);
   const [isMagnifyClosing, setIsMagnifyClosing] = useState(false);
   const [activeImage, setActiveImage] = useState('');
@@ -32,11 +32,70 @@ function App() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
+    const minimumSplashTime = 1500;
+    const splashFadeTime = 520;
+    const startedAt = window.performance.now();
+    let closeTimer = 0;
+    let removeTimer = 0;
+    let isCancelled = false;
+
+    const closeSplash = () => {
+      if (isCancelled) {
+        return;
+      }
+
+      const elapsed = window.performance.now() - startedAt;
+      const waitTime = Math.max(0, minimumSplashTime - elapsed);
+
+      closeTimer = window.setTimeout(() => {
+        setIsLoadingClosing(true);
+        removeTimer = window.setTimeout(() => {
+          setIsLoading(false);
+        }, splashFadeTime);
+      }, waitTime);
+    };
+
+    const waitForWindowLoad = new Promise((resolve) => {
+      if (document.readyState === 'complete') {
+        resolve();
+        return;
+      }
+
+      window.addEventListener('load', resolve, { once: true });
+    });
+
+    const waitForFonts = document.fonts
+      ? Promise.race([
+          document.fonts.ready,
+          new Promise((resolve) => {
+            window.setTimeout(resolve, 2200);
+          }),
+        ])
+      : Promise.resolve();
+
+    Promise.all([waitForWindowLoad, waitForFonts]).then(closeSplash);
+
+    return () => {
+      isCancelled = true;
+      window.clearTimeout(closeTimer);
+      window.clearTimeout(removeTimer);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle('is_loading', isLoading);
+
+    return () => {
+      document.body.classList.remove('is_loading');
+    };
+  }, [isLoading]);
+
+  useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.95,
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 1.5,
+      touchMultiplier: 1.2,
     });
 
     let rafId = 0;

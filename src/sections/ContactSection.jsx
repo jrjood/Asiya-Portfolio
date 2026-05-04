@@ -51,76 +51,60 @@ function ContactSection({ profile, socialLinks }) {
   };
 
   return (
-    <div id='contact'>
-      <h1>contact</h1>
-      <table>
-        <tbody>
-          <tr>
-            <td>
-              <div id='inner_div'>
-                <table id='inner_table'>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <i className='fas fa-phone'></i> &nbsp; {profile.phone}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i className='fas fa-at'></i> &nbsp; {profile.email}
-                      </td>
-                    </tr>
+    <section id='contact' className='content_section contact_section'>
+      <div className='section_header'>
+        <p>Let&apos;s connect</p>
+        <h1>contact</h1>
+      </div>
+      <div className='contact_grid'>
+        <div id='inner_div' className='contact_card'>
+          <p className='lead_text'>
+            Available for marketing supervision, content strategy, influencer
+            campaigns, and brand growth projects.
+          </p>
+          <a className='contact_link' href={`tel:${profile.phone}`}>
+            <i className='fas fa-phone'></i>
+            {profile.phone}
+          </a>
+          <a className='contact_link' href={`mailto:${profile.email}`}>
+            <i className='fas fa-at'></i>
+            {profile.email}
+          </a>
+          <div className='footer_social_wrap'>
+            {socialLinks.map((social) => (
+              <a
+                key={`bottom-social-${social.icon}`}
+                className='social footer_social_icon'
+                href={social.url}
+                target='_blank'
+                rel='noreferrer'
+                aria-label={social.label}
+              >
+                <i className={`fab fa-${social.icon}`}></i>
+              </a>
+            ))}
+          </div>
+        </div>
 
-                    <tr>
-                      <td>
-                        {socialLinks.map((social) => (
-                          <a
-                            key={`bottom-social-${social.icon}`}
-                            className='social footer_social_icon'
-                            href={social.url}
-                            target='_blank'
-                            rel='noreferrer'
-                            aria-label={social.label}
-                          >
-                            <i className={`fab fa-${social.icon}`}></i>
-                          </a>
-                        ))}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </td>
-            <td>
-              <form onSubmit={handleSubmit}>
-                <input type='text' name='name' placeholder='name' required />
-                <input type='email' name='email' placeholder='email' required />
-                <br />
-                <textarea
-                  name='message'
-                  placeholder='your message'
-                  required
-                  rows='5'
-                ></textarea>
-                <br />
-                <button
-                  className='btn_one'
-                  type='submit'
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'sending...' : 'send'}
-                </button>
-                {formStatus ? (
-                  <p className={`form_status ${formStatusType}`}>
-                    {formStatus}
-                  </p>
-                ) : null}
-              </form>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <form className='contact_form' onSubmit={handleSubmit}>
+          <input type='text' name='name' placeholder='name' required />
+          <input type='email' name='email' placeholder='email' required />
+          <textarea
+            name='message'
+            placeholder='your message'
+            required
+            rows='5'
+          ></textarea>
+          <button className='btn_one' type='submit' disabled={isSubmitting}>
+            {isSubmitting ? 'sending...' : 'send'}
+            <i className='fas fa-paper-plane'></i>
+          </button>
+          {formStatus ? (
+            <p className={`form_status ${formStatusType}`}>{formStatus}</p>
+          ) : null}
+        </form>
+      </div>
+    </section>
   );
 }
 

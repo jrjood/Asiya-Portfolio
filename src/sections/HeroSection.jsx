@@ -9,6 +9,9 @@ function HeroSection({ profile, revealReady }) {
       <div className='hero-content'>
         <div id='about' className='left-content'>
           <div className='hero_content_wrap left-content-wrap'>
+            <p className='hero_kicker hero_reveal_1'>
+              Digital Marketing Specialist
+            </p>
             <h1 className='hero_title hero_reveal_2'>
               Hi, I&apos;m <span className='hero_name'>{firstName}</span>
             </h1>
@@ -20,12 +23,31 @@ function HeroSection({ profile, revealReady }) {
                 href='/cv.pptx'
                 download='Asiya-Hosny-CV.pptx'
               >
-                Download Cv <i className='fas fa-download'></i>
+                Download CV <i className='fas fa-download'></i>
               </a>
               <a className='btn_one cta_button' href='#contact'>
-                Hire Me <i className='fas fa-arrow-up-right-from-square'></i>
+                Start a Project{' '}
+                <i className='fas fa-arrow-up-right-from-square'></i>
               </a>
             </div>
+
+            <dl
+              className='hero_stats hero_reveal_5'
+              aria-label='Career highlights'
+            >
+              <div>
+                <dt>6+</dt>
+                <dd>Years in digital marketing</dd>
+              </div>
+              <div>
+                <dt>5</dt>
+                <dd>Industries supported</dd>
+              </div>
+              <div>
+                <dt>27.4k</dt>
+                <dd>Organic Instagram growth</dd>
+              </div>
+            </dl>
           </div>
         </div>
 
@@ -39,19 +61,9 @@ function HeroSection({ profile, revealReady }) {
               fetchPriority='high'
               decoding='sync'
             />
-            <img
-              className='hero_scratch'
-              src='/images/scratch-img.webp'
-              alt=''
-              aria-hidden='true'
-              loading='eager'
-              fetchPriority='high'
-              decoding='sync'
-            />
           </div>
         </div>
       </div>
-
     </section>
   );
 }

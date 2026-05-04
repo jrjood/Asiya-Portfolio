@@ -4,25 +4,32 @@ function ProjectsSection({ projects, galleryProjects, onImageClick }) {
   );
 
   return (
-    <section id='work'>
-      <h1>projects</h1>
+    <section id='work' className='content_section'>
+      <div className='section_header project_section_header'>
+        <p>Selected work</p>
+        <h1>projects</h1>
+      </div>
       <div className='project_grid'>
         {projects.map((project, projectIndex) => {
           const galleryGroup = galleryMap.get(project.gallerySlug);
 
           return (
             <article key={project.name} className='project_card'>
-              <h3>{project.name}</h3>
-              <p className='timeline_meta'>Duration: {project.duration}</p>
-              <div className='platform_wrap'>
-                {project.platforms.map((platform) => (
-                  <span
-                    key={`${project.name}-${platform}`}
-                    className='platform_badge'
-                  >
-                    {platform}
-                  </span>
-                ))}
+              <div className='project_card_header'>
+                <div>
+                  <h3>{project.name}</h3>
+                  <p className='timeline_meta'>{project.duration}</p>
+                </div>
+                <div className='platform_wrap'>
+                  {project.platforms.map((platform) => (
+                    <span
+                      key={`${project.name}-${platform}`}
+                      className='platform_badge'
+                    >
+                      {platform}
+                    </span>
+                  ))}
+                </div>
               </div>
               <p>{project.description}</p>
 
@@ -53,7 +60,10 @@ function ProjectsSection({ projects, galleryProjects, onImageClick }) {
               {project.metrics ? (
                 <div className='metric_box'>
                   {project.metrics.map((metric) => (
-                    <p key={metric}>{metric}</p>
+                    <p key={metric}>
+                      <i className='fas fa-chart-line'></i>
+                      {metric}
+                    </p>
                   ))}
                 </div>
               ) : null}

@@ -20,7 +20,7 @@ export const socialLinks = [
   {
     icon: 'instagram',
     label: 'instagram',
-    url: 'https://www.instagram.com/asiyahosnystore/',
+    url: 'https://www.instagram.com/asiya_hosny/',
   },
   {
     icon: 'tiktok',

@@ -1,7 +1,18 @@
 function LoadingScreen({ isLoadingClosing }) {
   return (
-    <div id='loading' className={isLoadingClosing ? 'animated fadeOut' : ''}>
-      <div id='spinner'></div>
+    <div
+      id='loading'
+      className={
+        isLoadingClosing ? 'loading_screen loading_closing' : 'loading_screen'
+      }
+      aria-live='polite'
+      aria-label='Loading portfolio'
+    >
+      <div className='loading_brand'>
+        <span>asiya.</span>
+        <p>Digital Marketing Specialist</p>
+      </div>
+      <div id='spinner' aria-hidden='true'></div>
     </div>
   );
 }

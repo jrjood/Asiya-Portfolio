@@ -1,7 +1,10 @@
 function TimelineSection({ id, title, items, type }) {
   return (
     <section id={id} className='content_section'>
-      <h1>{title}</h1>
+      <div className='section_header'>
+        <p>{type === 'work' ? 'Career path' : 'Credentials'}</p>
+        <h1>{title}</h1>
+      </div>
       <div className='timeline_list'>
         {items.map((item) => (
           <article
