@@ -4,6 +4,7 @@ import LoadingScreen from './components/common/LoadingScreen';
 import ImageLightbox from './components/common/ImageLightbox';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import SocialRail from './components/layout/SocialRail';
 import HeroSection from './sections/HeroSection';
 import AboutSection from './sections/AboutSection';
 import SkillsSection from './sections/SkillsSection';
@@ -151,11 +152,8 @@ function App() {
       />
 
       <Header isScrolled={isScrolled} />
-      <HeroSection
-        profile={profile}
-        socialLinks={socialLinks}
-        revealReady={!isLoading}
-      />
+      <SocialRail socialLinks={socialLinks} />
+      <HeroSection profile={profile} revealReady={!isLoading} />
       <AboutSection profile={profile} />
       <SkillsSection skills={skills} />
       <ProjectsSection

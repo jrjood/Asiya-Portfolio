@@ -1,4 +1,4 @@
-function HeroSection({ profile, socialLinks, revealReady }) {
+function HeroSection({ profile, revealReady }) {
   const firstName = profile.name.split(' ')[0];
 
   return (
@@ -52,20 +52,6 @@ function HeroSection({ profile, socialLinks, revealReady }) {
         </div>
       </div>
 
-      <div className='hero_socials hero_reveal_5'>
-        {socialLinks.map((social) => (
-          <a
-            key={`top-social-${social.icon}`}
-            className='social'
-            href={social.url}
-            target='_blank'
-            rel='noreferrer'
-            aria-label={social.label}
-          >
-            <i className={`fab fa-${social.icon}`}></i>
-          </a>
-        ))}
-      </div>
     </section>
   );
 }
