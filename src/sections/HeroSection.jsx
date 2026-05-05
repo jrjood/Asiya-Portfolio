@@ -56,7 +56,7 @@ function HeroSection({ profile, revealReady }) {
               src='/images/asiya-img.webp'
               alt='Asiya portrait'
               loading='eager'
-              fetchPriority='high'
+              fetchpriority='high'
               decoding='sync'
             />
           </div>
