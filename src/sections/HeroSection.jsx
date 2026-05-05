@@ -9,9 +9,7 @@ function HeroSection({ profile, revealReady }) {
       <div className='hero-content'>
         <div id='about' className='left-content'>
           <div className='hero_content_wrap left-content-wrap'>
-            <p className='hero_kicker hero_reveal_1'>
-              Digital Marketing Specialist
-            </p>
+            <p className='hero_kicker hero_reveal_1'>Marketing Supervisor</p>
             <h1 className='hero_title hero_reveal_2'>
               Hi, I&apos;m <span className='hero_name'>{firstName}</span>
             </h1>

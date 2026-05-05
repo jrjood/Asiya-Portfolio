@@ -10,7 +10,7 @@ function LoadingScreen({ isLoadingClosing }) {
     >
       <div className='loading_brand'>
         <span>asiya.</span>
-        <p>Digital Marketing Specialist</p>
+        <p>Marketing Supervisor</p>
       </div>
       <div id='spinner' aria-hidden='true'></div>
     </div>
