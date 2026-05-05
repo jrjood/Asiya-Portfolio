@@ -101,19 +101,19 @@ export const education = [
     year: '2015-2019',
     credential: 'Bachelor of Laws (LLB)',
     institution: 'Ain Shams University',
-    logo: '/images/education/ain-shams.webp',
+    logo: '/images/education/ain-shams.png',
   },
   {
     year: '2023',
     credential: 'Certified Digital Marketing Diploma',
     institution: 'Canadian Chamber of Commerce (CanCham)',
-    logo: '/images/education/cancham.webp',
+    logo: '/images/education/cancham.png',
   },
   {
     year: '2024',
     credential: 'Advanced E-commerce Training Workshop',
     institution: 'USAID (4-day intensive) & Online Marketing Course by USAID',
-    logo: '/images/education/usaid-logo.webp',
+    logo: '/images/education/usaid-logo.png',
   },
 ];
 
