@@ -58,28 +58,22 @@ function App() {
     const handleLoad = () => {
       Promise.all([
         document.fonts.ready,
-        ...Array.from(document.images)
-          .filter((img) => !img.complete)
-          .map(
-            (img) =>
-              new Promise((resolve) => {
-                img.onload = img.onerror = resolve;
-              }),
-          ),
+        new Promise((resolve) => {
+          if (document.readyState === 'complete') {
+            resolve();
+          } else {
+            window.addEventListener('load', resolve, { once: true });
+          }
+        }),
       ]).then(closeSplash);
     };
 
-    if (document.readyState === 'complete') {
-      handleLoad();
-    } else {
-      window.addEventListener('load', handleLoad, { once: true });
-    }
+    handleLoad();
 
     return () => {
       isCancelled = true;
       window.clearTimeout(closeTimer);
       window.clearTimeout(removeTimer);
-      window.removeEventListener('load', handleLoad);
     };
   }, []);
 
