@@ -55,30 +55,31 @@ function App() {
       }, waitTime);
     };
 
-    const waitForWindowLoad = new Promise((resolve) => {
-      if (document.readyState === 'complete') {
-        resolve();
-        return;
-      }
+    const handleLoad = () => {
+      Promise.all([
+        document.fonts.ready,
+        ...Array.from(document.images)
+          .filter((img) => !img.complete)
+          .map(
+            (img) =>
+              new Promise((resolve) => {
+                img.onload = img.onerror = resolve;
+              }),
+          ),
+      ]).then(closeSplash);
+    };
 
-      window.addEventListener('load', resolve, { once: true });
-    });
-
-    const waitForFonts = document.fonts
-      ? Promise.race([
-          document.fonts.ready,
-          new Promise((resolve) => {
-            window.setTimeout(resolve, 2200);
-          }),
-        ])
-      : Promise.resolve();
-
-    Promise.all([waitForWindowLoad, waitForFonts]).then(closeSplash);
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad, { once: true });
+    }
 
     return () => {
       isCancelled = true;
       window.clearTimeout(closeTimer);
       window.clearTimeout(removeTimer);
+      window.removeEventListener('load', handleLoad);
     };
   }, []);
 
