@@ -1,0 +1,47 @@
+# SEO Data Input Template
+
+Use this file to prepare real values for your site metadata.
+Replace every example value with your real data.
+
+## 1) Primary Domain
+
+ 
+
+## 2) Social Profile URLs
+
+ 
+
+## 3) Brand and Contact Details (Schema)
+
+ 
+
+## 4) Business Address (Optional)
+
+ 
+
+## 5) Open Graph Image
+
+Recommended size: 1200x630
+ 
+
+ 
+
+ 
+
+## 8) Indexing Preference
+
+- Indexing: index,follow
+  - Use noindex,nofollow only for staging/pre-launch
+
+## 9) Hreflang and Language URLs
+
+If single language, provide one URL.
+If multi-language, provide each language URL.
+
+ 
+## 10) Homepage SEO Copy
+
+Keep title around 50-60 chars.
+Keep meta description around 140-160 chars.
+
+ 
